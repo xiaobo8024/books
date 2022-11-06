@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 300px;
+            border: #5e38cc solid 1px;
+        }
+        .p{
+
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id='app' class="box">
+    <h2 class="p">{{message}}</h2>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+        },
+        methods: {},
+    })
+</script>
+</html>

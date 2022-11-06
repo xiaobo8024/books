@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  下拉框控件  -->
+    下拉框控件:
+    <select>
+        <option>苹果1</option>
+        <option>苹果2</option>
+        <option>苹果3</option>
+        <option>苹果4</option>
+    </select><br/>
+
+<!--  文件选择控件 -->
+    文件选择控件: <input type="file"><br/>
+
+<!--  隐藏域控件  -->
+<!--  method 必须为 post，enctype 值必须为 multipart/form-data  -->
+    隐藏域控件: <input type="hidden"><br/>
+
+<!--  单选框控件  -->
+    单选框控件: <input type="radio"><br/>
+    单选框控件: <input type="radio"><br/>
+
+<!--  复选框控件  -->
+    复选框控件: <input type="checkbox"><br/>
+    复选框控件: <input type="checkbox"><br/>
+
+<!--  表单提交控件  -->
+    表单提交控件: <input type="submit"><br/>
+
+<!--   单行文本输入控件 -->
+    单行文本输入控件: <input type="text"><br/><br/>
+
+<!--  多行文本输入控件  -->
+    多行文本输入控件: <textarea></textarea><br/>
+
+<!--  表单内容重置控件  -->
+    表单内容重置控件: <input type="reset"><br/>
+
+    <!--      <label></label>控件，此控件中放入以上其他控件，点击<label>标签任意一处都会-->
+</div>
+
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+        },
+        methods: {},
+    })
+</script>
+</html>

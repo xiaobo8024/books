@@ -1,0 +1,18 @@
+v-once: 被v-once修饰的标签值不能再进行更改
+v-pre: 被v-pre修饰的标签值与Vue的动态绑定失效，会展示标签原有的值。
+v-locak: 被v-locak修饰的标签的值，在vue解析之前，div中有一个属性v-cloak,在vue解析之后，div中没有一个属性v-locak
+作用:一般可以用来隐藏还未加载出来的标签值，让它不进行展示
+例如:
+  <style>
+    [v-loack]{
+      display: none;
+    }
+  </style>
+
+<div id="app">
+  <h2 v-loack="style">{{message}}</h2>
+  <h2>{{message}}</h2>
+</div>
+
+v-text: 使用v-text会覆盖标签中的值,但是多数情况都会用mustache{{}}语法,v-text不支持简单运算，且不灵活，可被{{}}替换
+v-html: 使用v-html属性，可以将字符串解析成html格式的语句

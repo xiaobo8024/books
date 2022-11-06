@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <h2 :id="dataId | formatId">hello world</h2>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            dataId: 'dff1',
+            message: '你好啊陌生人',
+        },
+        methods: {},
+        filters: {
+            formatId(value){
+                console.log(value)
+                return value?value.charAt(1)+value.indexOf('d'):'';
+            }
+        }
+    })
+</script>
+</html>

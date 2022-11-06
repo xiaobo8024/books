@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!-- 之前获取到的属性内容都是写死，现在要进行动态绑定 -->
+    <p>a标签中href属性值是写死的</p>
+    <a href='https://www.baidu.com'>百度一下</a><br>
+
+    <p>a标签中href属性值不是写死的</p>
+    <a v-bind:href="urls">百度一下</a><br>
+
+    <!--
+  语法糖：对语法的缩写，方便使用
+  使用语法糖v-bing被:替换
+   -->
+    <!-- v-bind 语法糖 -->
+  <p>使用v-bind语法糖</p>
+    <a :href="urls">百度两下</a>
+
+    <!-- 之前获取到的属性内容都是写死，现在要进行动态绑定 -->
+    <p>写死src的图片</p>
+    <img src="https://img30.360buyimg.com/pop/s590x470_jfs/t1/201288/25/23710/64955/62f070fdE95cb4f47/22b916d938a43bb5.jpg.avif"
+         alt="">
+    <br>
+
+    <p>动态绑定的src图片</p>
+    <!-- vue中的data数据的url相当于后端传来数据的中转，将src的属性绑定后，中转时获取值进行渲   染 -->
+    <img v-bind:src="url" alt="">
+
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            url: 'https://img30.360buyimg.com/pop/s590x470_jfs/t1/201288/25/23710/64955/62f070fdE95cb4f47/22b916d938a43bb5.jpg.avif', //从后端服务请求来服务后，做为中转
+            urls: 'https://www.baidu.com'
+        },
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .active{
+      color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+<!--  作业需求:点击列表中的哪一项，那么该项的文字变颜色-->
+  <ul>
+    <li @click="butClick(itemIndex)" v-for="(item,itemIndex) in movies" :class="{active:index==itemIndex}">{{item}}</li>
+  </ul>
+<!--  <button @click="butClick">点击我变颜色</button>-->
+</div>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  const app=new Vue({
+    el: '#app',
+    data: {
+     message:'你好陌生人',
+      movies: ['阿童木','西游记','黑猫警长','死神'],
+      isActive: true,
+        index: -1,
+    },
+    methods: {
+      butClick: function (itemIndex){
+          this.index=itemIndex;
+      }
+    }
+  })
+</script>
+</body>
+</html>

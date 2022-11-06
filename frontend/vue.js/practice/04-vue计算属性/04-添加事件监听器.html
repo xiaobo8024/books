@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <button>按钮4</button>
+  <button>按钮5</button>
+  <button>按钮6</button>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  let elementsByTagNames = document.getElementsByTagName('button');
+  for (let i = 0; i < elementsByTagNames.length; i++) {
+    elementsByTagNames[i].addEventListener('click',function(){
+      alert('点击了第'+(i+1)+'个按钮');
+    });
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-loack]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id='app'>
+<!--  在解析之前，h2标签有一个v-loack属性，在解析之后，h2标签没有一个v-loack属性  -->
+    <h2 v-loack="style">{{message}}</h2>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    setTimeout(function () {
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊陌生人',
+            },
+    })
+    },2000);
+</script>
+</html>

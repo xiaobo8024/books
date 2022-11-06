@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h2 :style="{color: colors,fontSize: finalSize,backgroundColor: backGrounds}">{{message}}</h2>
+    <h2 :style="getStyles()">{{message}}</h2>
+</div>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好陌生人',
+            colors: 'aquamarine',
+            finalSize: '100px',
+            backGrounds: 'black',
+        },
+        methods: {
+            getStyles:function (){
+                return {color: this.colors,fontSize: this.finalSize,backgroundColor: this.backGrounds}
+            }
+        }
+    })
+</script>
+</body>
+</html>

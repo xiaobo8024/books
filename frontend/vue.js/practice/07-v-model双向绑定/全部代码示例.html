@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue -->
+    <script src="../../../scriptdata/vue.js"></script>
+</head>
+
+
+<body>
+<div id="app">
+    <!-- 表单绑定v-model的双向绑定
+    当我们在输入框输入内容时，因为input中的v-model绑定了message ,所以会实时将输入的内容传递给message ,
+    message发生改变。内容传递给message , message发生改变。message的值插入到DOM中,所以DOM会发生响应的改变。0所以,通过v-model实现了双向的绑定。-->
+    <input type="text" v-model="message"> {{message}}
+    <br>
+    <!-- v-model和radio的结合使用 -->
+    <label for="man">
+        <input type="radio" value="男" v-model='sex' id="man">男
+    </label>
+    <label for="girl">
+        <input type="radio" value="女" v-model='sex' id="girl">女
+    </label> 您选中的是：{{sex}}
+    <br>
+    <!-- 复选框   一般对应布尔类型-->
+    <label for="agree">
+        <input type="checkbox" id="agree" v-model="agree">同意
+    </label>
+    <button :disabled="!agree">下一步</button> 您的选择：{{agree}}
+
+    <br>
+    <!-- 一般对应数组类型 -->
+    <input type="checkbox" v-model="sport" value="篮球">篮球
+    <input type="checkbox" v-model="sport" value="足球">足球
+    <input type="checkbox" v-model="sport" value="羽毛球球">羽毛球球
+    <input type="checkbox" v-model="sport" value="兵乓球">兵乓球 您的爱好有：{{sport}}
+
+    <br>
+    <!-- select  单选-->
+    <select name="abc" v-model='fruits'>
+        <option value="香蕉">香蕉</option>
+        <option value="苹果">苹果</option>
+        <option value="橙子">橙子</option>
+        <option value="榴莲">榴莲</option>
+    </select> 您选中的水果是{{fruits}}
+
+    <br>
+    <br>
+
+    <!-- 多选 -->
+    <select name="abc" v-model="fruits2" multiple>
+        <option value="香蕉">香蕉</option>
+        <option value="苹果">苹果</option>
+        <option value="橙子">橙子</option>
+        <option value="榴莲">榴莲</option>
+    </select>
+    <br> 您选中的水果是{{fruits2}}
+    <br>
+    <!-- 值绑定 -->
+    <label v-for="item in origintobbies" :for="item">
+        <input type="checkbox" :value="item" :id="item" v-model="hobbies">{{item}}
+    </label>
+    <br> 您的爱好是{{hobbies}}
+    <br>
+    <!-- 修饰符    lazy/number/trim -->
+    <!-- lazy  失去焦点后才改变点击enter-->
+    <!-- 口默认情况下, V- model默认是在input事件中同步输入框的数据的。口也就是说, - -旦有数据发生改变对应的data中的数据就会自动发生 改变。口lazy修饰符可以让数据在失去焦点或者回车时才会更新:-->
+    <input type="text" v-model.lazy="message">
+    <br> {{message}}
+    <br>
+    <!-- number 转化为数字类型-->
+    <!-- 默认情况下,在输入框中无论我们输入的是字母还是数字,都会被 当做字符串类型进行处理。口但是如果我们]希望处理的是数字类型,那么最好直接将内容当做数字处理。o number修饰符可以让在输入框中输入的内容自动转成数字类型:-->
+    <input type="text" v-model.number="age">
+    <br> {{age}}--{{typeof age}}
+    <br>
+    <!-- trim 去除空格 -->
+    <!-- trim修饰符可以过滤内容左右两边的空格 -->
+    <input type="text " v-model.trim="name">
+    <br> {{name}}
+
+
+</div>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "内容",
+            sex: '',
+            // 当要 默认选中时要填入值即可 例：sex='男'
+            agree: false,
+            sport: [],
+            fruits: '',
+            fruits2: [],
+            hobbies: [],
+            origintobbies: ["篮球", "足球", "乒乓球", "羽毛球", "桌球"],
+            age: 0,
+            name: ''
+
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+</body>
+
+</html>

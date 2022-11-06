@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .myStyle{
+            color: aqua;
+            font: caption;
+        }
+        .aaa{
+            color: chartreuse;
+            font: caption;
+        }
+    </style>
+</head>
+<body>
+<div id='app'>
+
+<!-- 普通属性绑定   -->
+    <a :href="urls">{{title}}</a>
+<!--  class对象绑定  -->
+<!--  这样绑定可以更换style对象的值对class模板进行更换  -->
+<!--  一般不这样使用，因为更换一类属性不灵活  -->
+    <h2 :class="style">{{message}}</h2>
+    <button @click="toClick">点击我可以更换style对象的值对class模板进行更换</button>
+
+<!-- key-value时候 只动态绑定value值 否则对象动态绑定  -->
+<!--  使用key-value形式绑定class对象 key是class对象，value是与Vue动态绑定的Boolean类型对象 -->
+    <h2 :class="{myStyle:isActive}">{{message}}</h2>
+    <button @click="clicks">点击我启用或关闭class对象</button>
+
+<!-- 动态抽取class对象，对class对象进行简化   -->
+<!-- 使用v-bind后,必与Vue中的参数绑定  -->
+    <h2 :class="myStyle">{{message}}</h2>
+
+<!--  使用多个对象绑定时,{}中如果只填key,则为class对象，非绑定Vue对象，value默认为true.
+     例如:
+ -->
+    <h2 :class="{myStyle}">{{message}}</h2>
+</div>
+</body>
+<script src="../../../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            title: '百度一下',
+            urls: 'https://www.baidu.com',
+            isActive: false,
+            message: '你好啊，陌生人',
+            style: 'myStyle'
+        },
+        methods: {
+            toClick(){
+                console.log('点击了按钮');
+              this.style=this.style==='myStyle'?'aaa':'myStyle'
+            },
+            clicks(){
+                this.isActive=this.isActive !== true;
+            }
+        },
+        computed: {
+            myStyle(){
+                return {myStyle:this.isActive};
+            }
+        }
+    })
+</script>
+</html>

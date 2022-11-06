@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <input type="checkbox" v-model="checkVal"/>
+    <input type="radio" value="two" v-model="radioVal" />
+    <select>
+        <option value ="volvo">Volvo</option>
+        <option value ="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+    <textarea rows="10" cols="30">
+我是一个文本框。
+</textarea>
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+            checkVal: ''
+        },
+        methods: {},
+    })
+</script>
+</html>

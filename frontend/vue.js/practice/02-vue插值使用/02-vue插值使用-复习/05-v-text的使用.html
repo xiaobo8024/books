@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2 v-text="message">aaa</h2>
+    <!--
+  ①使用v-text会覆盖标签中的值
+  ②多数情况都会用mustache{{}}语法,
+  v-text不支持简单运算，且不灵活，可被{{}}替换
+  -->
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script></script>
+<script>
+   const app=new Vue({
+       el: '#app',
+       data: {
+           message: '你好啊陌生人',
+       },
+       methods: {
+
+       }
+   });
+</script>
+</html>

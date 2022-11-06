@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: aquamarine;
+            font: caption;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- 使用一个类的模板进行渲染   -->
+    <!-- h2标签中的内容使用active这一个类的模板进行全部渲染   -->
+    <h2 class="active">{{message}}</h2>
+    <!--  直接使用style样式进行渲染  -->
+    <!--   如果要其他的样式，要手动分别增加。 -->
+    <h2 style="color: red;font-size: x-small">{{message}}</h2>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    //在javaScript中，class的意思是“类”，class关键字用于定义一个类的模板
+    //类可以理解为是一个具有相同属性和行为的群体集合，语法为“class{设置变量和方法}。”
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好陌生人',
+        },
+    });
+    console.log('总结:');
+    console.log('①javascript中class代表一类样式的属性,类中包含相同的属性的模板');
+    console.log('②class关键字用于css中style标签中,将一类标签相同需要被修饰的内容抽取到一类的模板中.');
+    console.log('③即使不用class这个类模板，也可以直接定义style 标签属性对被修饰的标签内容进行修饰');
+    console.log('④定义,在< style></style>的标签内容中进行定义一类属性，以"."进行开头,例如：.a{},a为class对象');
+    console.log('⑤使用，在被修饰的标签上打上class关键字，并写入类名。例如:< h1 class="a">hello</h2>');
+</script>
+</body>
+</html>

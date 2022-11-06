@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="./jquery.js"></script>
+<body>
+<input type="checkbox" value="B">B
+<input type="checkbox" value="C">C
+<input id="a" type="text"/>
+</body>
+
+<script>
+    $('input[type="checkbox"]').change(function () {
+
+        var a = '';
+
+        $('input[type="checkbox"]:checked').each(function () {
+
+            if (a !== '') {
+
+                a += ',';
+
+            }
+
+            a += $(this).val();
+
+        });
+
+        $('#a').val(a);
+
+    });
+</script>
+</html>

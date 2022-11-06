@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <select :value="bookName" @input="bookName=$event.target.value">
+        <option v-for="item in books">{{item.bookName}}</option>
+    </select>
+    <br>
+    <span>选择到的书:{{bookName}}</span>
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            books: [
+                {id:1,bookName:'海底两万里',price:100},
+                {id:2,bookName:'十万个为什么',price:110},
+                {id:3,bookName:'百科全书',price:10},
+                {id:4,bookName:'大话西游',price:20},
+            ],
+            bookName: '',
+        },
+        methods: {},
+    })
+</script>
+</html>

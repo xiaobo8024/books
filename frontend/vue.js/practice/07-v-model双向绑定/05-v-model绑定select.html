@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <p style="color: red">select也分单选和多选两种情况</p>
+    <div style="width: 600px;height: 180px;border: 1px solid black">
+        <p>单选:<br/>
+            只能选中一个值,v-model绑定的是一个值。当我们选中option中的一个时，会将它对应的value赋值到fruit中</p>
+        <div style="margin-left: 20px">
+            水果:<select v-model="fruit">
+            <option value="apple">苹果</option>
+            <option value="orange">橘子</option>
+            <option value="banana">香蕉</option>
+        </select>
+        </div>
+        <p>选中的水果是: {{fruit}}</p>
+    </div>
+    <br/>
+    <div style="width: 600px;height: 400px;border: 1px solid sienna" >
+        <p>多选:<br/>
+            可以选中多个值，v-model绑定的是一个数组。当选中多个值时，就会将选中的option对应的value添加到数组fruit中</p>
+        <div style="margin-left: 20px">
+            水果:<select multiple="multiple" v-model="fruits">
+            <option value="橘子">橘子</option>
+            <option value="香蕉">香蕉</option>
+            <option value="葡萄">葡萄</option>
+            <option value="西瓜">西瓜</option>
+        </select>
+        </div>
+        <p>选中的水果是: {{fruits}}</p>
+    </div>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+            fruit: '',
+            fruits: [],
+        },
+        methods: {},
+    })
+</script>
+</html>

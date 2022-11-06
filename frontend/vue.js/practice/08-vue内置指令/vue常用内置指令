@@ -1,0 +1,10 @@
+v-model: v-model主要实现数据双向绑定，通常用在表单元素上，例如:input、textarea、select等
+v-on: 监听事件
+v-bind: 单向数据绑定
+v-text: 使用v-text标签属性后，只会使用v-text 绑定的属性的值
+v-pre: 解除与vue的动态绑定
+v-html: 插入包含html的内容
+v-for: 列表渲染
+v-loack: 隐藏未渲染的数据
+v-if: 条件渲染
+v-show: 显示隐藏

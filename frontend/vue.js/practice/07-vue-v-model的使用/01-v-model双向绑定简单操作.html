@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--  v-model主要实现数据双向绑定，通常用在表单元素上，例如:input、textarea、select等  -->
+<!--  input标签双向绑定  -->
+<!--  在控制台改变app.message的值，input输入框的值也会随着改变  -->
+    <input type="text" v-model="message" >
+
+<!--  textarea标签双向绑定  -->
+    <textarea  v-model="message"></textarea>
+<!--  select标签双向绑定  -->
+    <select v-model="books" >
+        <option :value="item.bookName" v-for="(item,index) in books" :key="index">{{item.bookName}}</option>
+    </select>
+</div>
+</body>
+<!--<script src="../../../../../scriptdata/vue.js"></script>-->
+<!--<script>-->
+<!--    const app = new Vue({-->
+<!--        el: '#app',-->
+<!--        data: {-->
+<!--            message: '你好啊陌生人',-->
+<!--            books: [-->
+<!--                {id: 1,bookName:'代码大全',price: 119},-->
+<!--                {id: 2,bookName:'鸟哥私房菜',price: 120},-->
+<!--                {id: 3,bookName:'sql必知必会',price: 110},-->
+<!--                {id: 4,bookName:'深入理解计算机原理',price: 100},-->
+<!--            ]-->
+<!--        },-->
+<!--        methods: {},-->
+<!--    })-->
+<!--</script>-->
+</html>

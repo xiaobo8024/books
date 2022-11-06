@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>{{fullName}}</h2>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  const app=new Vue({
+    el: '#app',
+    data: {
+     message:'你好陌生人',
+    },
+    computed: {
+      fullName: {
+        get: function (){
+          return '史蒂芬';
+        }
+      },
+    }
+  })
+</script>
+</body>
+</html>

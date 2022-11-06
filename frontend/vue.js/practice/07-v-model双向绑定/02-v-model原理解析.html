@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .explain{
+            width: 600px;
+            height: 300px;
+            border: 1px solid aqua;
+        }
+        .box{
+            width: 600px;
+            height: 250px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id='app'>
+
+    <div class="explain">
+        <!--
+                v-model的原理其实是背后有两个操作:<br/>
+                1、v-bind绑定value属性的值；<br/>
+                2、v-on绑定input事件监听到函数中，函数会获取最新的值赋值到绑定的属性中
+                -->
+        <p> v-model的原理其实是背后有两个操作:<br/>
+            1、v-bind绑定value属性的值；<br/>
+            2、v-on绑定input事件监听到函数中，函数会获取最新的值赋值到绑定的属性中<br/><br/>
+
+            v-model是双向绑定，但是是单向数据流。<br/>
+            单项数据流: 父组件可以向值传递数据，并且改变值组件的值，而子组件不能改变父组件传递给它的
+            prop属性，官方推荐的做法是它抛出事件，通告父组件自行改变绑定的值。<br/>
+            总结:数据向下，事件向上。
+
+            v-model完全符合单项数据流，它给出了一种在命名和事件定义上的规范，众所周知.sync修饰符是单向数据流的另一个典型范式。
+
+        </p>
+        <!--  v-model是双向绑定，但是是单向数据流。
+
+              单项数据流: 父组件可以向值传递数据，并且改变值组件的值，而子组件不能改变父组件传递给它的
+              prop属性，官方推荐的做法是它抛出事件，通告父组件自行改变绑定的值。
+              总结:数据向下，事件向上。
+
+              v-model完全符合单项数据流，它给出了一种在命名和事件定义上的规范，众所周知.sync修饰符是单向数据流的另一个典型范式。
+          -->
+    </div>
+
+<br/>
+    <div class="box">
+        <p>v-model 简单使用: < input v-model="searchText"><br/>
+        </p>
+        <!--  简单使用  -->
+        <!--  v-model  -->
+        <input v-model="searchText"><br/>
+        <!--  等价于 <input :value="searchText" @input="searchText=$event.target.value"> -->
+        <p>searchText的值: {{searchText}}</p>
+        <p>等价于 < input :value="searchText" @input="searchText=$event.target.value"></p>
+        <input :value="searchText" @input="searchText=$event.target.value">
+        <p>searchText的值: {{searchText}}</p>
+    </div>
+    <br/>
+    <br/>
+    <div style="width: 600px;height: 400px;border: 1px solid black">
+        <!--  v-model如何绑定表单类型  -->
+        <!--  v-model绑定textarea  -->
+        <p>model如何绑定表单类型</p>
+        <p>model如何绑定表单类型</p>
+        <div style="background-color: red;width: 300px">
+            <p>输入文本域的值:</p>
+            <textarea v-model="article" cols="30" rows="10"></textarea>
+            <h2>article当前的值是: {{article}}</h2>
+        </div>
+    </div>
+<br/>
+
+</div>
+
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+            searchText: '',
+            article: '',
+            isAgree: '',
+            hobbies: [],
+        },
+        methods: {},
+    })
+</script>
+</html>

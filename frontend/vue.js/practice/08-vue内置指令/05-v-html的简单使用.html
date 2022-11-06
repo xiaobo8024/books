@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--  使用v-html  -->
+    <span  v-html="url"></span>
+    <br>
+<!--  不使用html   -->
+    <span v-text="url"></span>
+    <br>
+    <span v-text="url">{{url}}</span>
+    <br>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+            url: '<a href="https://www.baidu.com">点我跳转<a/>'
+        },
+        methods: {},
+    })
+</script>
+</html>

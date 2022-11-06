@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>{{message}}</h2>
+  <h2>{{message}},{{firstName}}</h2>
+  <h2>{{firstName}}的{{lastName}}</h2>
+  <h2>{{firstName+lastName}}</h2>
+  <h2>{{firstName+' '+lastName}}</h2>
+  <h2>{{account*2}}</h2>
+
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  const app=new Vue({
+    el: '#app',
+    data: {
+      message: '我是消息',
+      firstName: '美丽',
+      lastName: '黎明',
+      account: 100,
+    },
+  })
+</script>
+</body>
+</html>

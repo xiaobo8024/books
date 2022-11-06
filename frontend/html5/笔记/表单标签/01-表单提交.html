@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--    <form action="./01-接受表单提交.html" method="get">-->
+<!--    <label for="go"></label><input id="go" type="text" name="aaa">-->
+       <label for="username"><span>账号:</span></label>
+        <input type="text" name="username" id="username"><br/>
+        <label for="password"><span>密码:</span></label>
+        <input id="password" type="password" name="password"><br/>
+        <button type="submit">登录</button>
+<!--    </form>-->
+    <p id="demo"></p>
+</div>
+
+</body>
+
+<script>
+   // let text= document.getElementById("go").nodeValue;
+   //  console.log(text);
+
+    let buttonElement = document.getElementsByTagName("button")[0];
+    buttonElement.addEventListener('click',function () {
+        let username= document.getElementsByName("username")[0].value;
+        console.log(username);
+        let password=document.getElementsByName("password")[0].value;
+        let check='';
+        if(username.length===0||username.length>16){
+          check="账号或密码输入有错误";
+        }else if(password.length===0||password.length>16){
+            check="账号或密码输入有错误";
+        }else {
+            check="输入正确";
+        }
+       document.getElementById("demo").innerHTML=check;
+    });
+
+</script>
+</html>

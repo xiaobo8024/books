@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        hr{
+            color: red;
+        }
+        p{
+            margin-left: 20px;
+        }
+        body{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<!--当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 <style> 标签在文档头部定义内部样式表-->
+<div id='app'>
+    <p>{{message}}</p>
+    <p>{{message}}</p>
+    <hr>
+    <p>{{message}}</p>
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+        },
+        methods: {},
+    })
+</script>
+</html>

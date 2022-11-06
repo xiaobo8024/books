@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <span>hello world</span>
+</div>
+<button type="button">点击</button>
+</body>
+
+<script>
+    const person={
+        name: "老李",
+        age: 18,
+        address: "深圳",
+        phone: "123456789",
+
+        //在对象内必须用方法名:方法（），代表属于这个类的方法
+        fullName:function () {
+            return this.name+"在"+this.address+"上班";
+        },
+        text:function () {
+            
+        },
+
+    }
+    let str = person.fullName();
+    let text = person.text();
+    console.log(str);
+    console.log(text);
+    //document的写入是在最后一个元素标签后面进行追加
+    document.write("<p>"+str+"</p>");
+
+</script>
+</html>

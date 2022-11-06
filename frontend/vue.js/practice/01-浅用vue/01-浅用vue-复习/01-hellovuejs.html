@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../../../scriptdata/vue.js"></script>
+<body>
+<!--<div id="apps">{{message}}</div>-->
+<h2 id="apps">{{message}}</h2>
+</body>
+<script>
+    let message
+    function changeMessage(message) {
+
+    }
+    const app = new Vue({
+        el: '#apps',
+        data: {
+            message: 'hello word',
+        },
+        methods: {
+
+        }
+    });
+</script>
+</html>

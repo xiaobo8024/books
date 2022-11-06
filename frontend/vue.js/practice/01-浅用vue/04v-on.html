@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{account}}</h2>
+<!--  <button v-on:click="account++">+</button>-->
+<!--  <button v-on:click="account&#45;&#45;">-</button>-->
+  <button v-on:click="add">+</button>
+  <button v-on:click="sub">+</button>
+</div>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      account:0,
+    },
+    methods:{
+      add:function (){
+        console.log("执行了"+this.account+++"次+操作");
+       // this.account++;
+      },
+      sub:function (){
+        console.log("执行了"+this.account--+"次-操作");
+    //    this.account--;
+      }
+    }
+  });
+</script>
+</body>
+</html>

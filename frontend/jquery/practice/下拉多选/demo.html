@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form>
+        <label for="search">
+            <span>请选择:</span>
+        </label>
+        <input id="search" type="text" >
+        <input id="searchBut" type="button" value="搜索">
+    </form>
+
+
+<ul id="conditionItem">
+
+</ul>
+</div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    //赋值
+    // $("#spanid").html(value)
+    //
+    // //取值
+    // $("#spanid").text()
+    $(function () {
+        let ele='';
+        //遍历条件追加到列表中
+        let conditionItem=['命名空间','实例名','状态'];
+        for (let i = 0; i <conditionItem.length; i++) {
+            $("#conditionItem").append("<li style='list-style: none'>"+conditionItem[i]+"</li>");
+        }
+
+        //隐藏列表
+        $("#conditionItem").hide();
+
+        //鼠标放在搜索框上显示列表
+        $("#search").mousedown(function (){
+            $("#conditionItem").show();
+        });
+
+        //鼠标离开显示列表，就隐藏选项列表，并清空ele
+        $("#conditionItem").mouseleave(function (){
+            $("#conditionItem").hide();
+        });
+
+        //点击选择框中的属性，赋值给text input
+        $("ul li").click(function(){
+            if(ele !==''){
+                ele +=';';
+            }
+            ele +=$(this).text();
+            $("#search").val(ele);
+
+            $("#search").change(function () {
+                ele= $("#search").val();
+            });
+            $("#conditionItem").hide();
+        });
+
+    })
+
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="../../../scriptdata/vue.js"></script>
+<!--id=app挂载这个元素-->
+<div id="app">{{aaa}}</div>
+
+<script>
+  function Person(name,age){}
+</script>
+<script>
+  //let(es6定义变量)/const（es6定义常量） /js早期中没有变量作用域的概念，es6改掉了
+  //声明方式编程
+  let name='aaa'
+  name='bbb'
+ let app= new Vue({
+   el:'#app', //用于要挂载的元素
+   data:{  //定义数据
+     aaa: '你好啊，世界123'
+   }
+  })
+  //元素js用法 (编程范式：命名式编程)
+  //1、创建div元素，设置id属性
+  //2、定义一个变量叫message
+  //3、将message变量放在前面的div元素中显示
+</script>
+</body>
+</html>

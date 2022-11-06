@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--  非语法糖   -->
+    <h2 v-on:click="getClick">{{message}}</h2>
+<!--  语法糖  -->
+    <h2 @click="getClick">{{message}}</h2>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+        },
+        methods: {
+            getClick(){
+                console.log('点击了我哦。')
+            }
+        },
+    })
+</script>
+</html>

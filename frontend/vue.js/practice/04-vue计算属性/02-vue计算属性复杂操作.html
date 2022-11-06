@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  <h2 >{{message}}</h2>-->
+<!-- es5写法   -->
+  <h2>总价格:{{totalPriceEs5}}</h2>
+<!-- es6写法 取索引的写法  -->
+  <h2>总价格:{{totalPriceEs6}}</h2>
+<!--  es6写法 取对象写法  -->
+  <h2>总价格:{{totalPriceEs6Obj}}</h2>
+</div>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  const app=new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊陌生人',
+      books: [
+        {id: 1,bookName:'代码大全',price: 119},
+        {id: 2,bookName:'鸟哥私房菜',price: 120},
+        {id: 3,bookName:'sql必知必会',price: 110},
+        {id: 4,bookName:'深入理解计算机原理',price: 100},
+      ]
+    },
+    computed: {
+        //es5的写法
+        totalPriceEs5: function (){
+            let result=0;
+            for (let i = 0; i < this.books.length; i++) {
+                result+=this.books[i].price;
+            }
+            return result;
+        },
+        //es6的写法
+        totalPriceEs6: function (){
+          let result=0;
+            for (let i in this.books) {
+                result+=this.books[i].price;
+            }
+           return result;
+        },
+        //es6 直接取对象
+        totalPriceEs6Obj: function (){
+          let result=0;
+            for (let book of this.books){
+              result+=book.price;
+            }
+           return result;
+        }
+    },
+  });
+</script>
+</body>
+</html>

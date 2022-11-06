@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--  使用v-text标签属性后，只会使用v-text 绑定的属性的值 -->
+    <span v-text="message">{{hello}}</span>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+            hello: 'hello word'
+        },
+        methods: {},
+    })
+</script>
+</html>
