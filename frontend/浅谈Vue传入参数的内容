@@ -1,0 +1,8 @@
+vue选项中
+props、、
+data、
+watch、
+methods、
+computed、
+filters,
+其中props、data、computed都通过Object.defineProperty进行数据拦截从而实现响应式。

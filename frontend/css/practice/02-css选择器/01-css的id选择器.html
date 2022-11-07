@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+/*使用#号修饰符修饰，标签通过id选择被修饰*/
+        #a{
+            color: #5e38cc;
+        }
+
+    </style>
+</head>
+<body>
+<div id='app'>
+    <h2 id="a">{{message}}</h2>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+        },
+        methods: {},
+    })
+</script>
+</html>

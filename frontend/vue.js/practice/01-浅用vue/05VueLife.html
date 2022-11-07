@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="../../../scriptdata/vue.js"></script>
+<div id="app">
+  <h2>{{account}}</h2>
+  <button v-on:click="add">+</button>
+  <button v-on:click="sub">-</button>
+</div>
+<script>
+  const obj={
+    account: 0,
+  }
+  const obj2={
+    add:function (){
+      this.account++;
+      console.log("被执行了+一次");
+    },
+
+    sub:function (){
+      this.account--;
+      console.log("被执行了-一次");
+    },
+  };
+
+  const vue = new Vue({
+    el:'#app',
+    data:obj,
+    methods:obj2,
+    create:function (){
+      console.log("vue生命周期中的good")
+    },
+    mounted:function (){
+    console.log("vue生命周期中的food")
+    },
+  });
+</script>
+</body>
+</html>

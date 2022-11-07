@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script src="indexOf的使用.js"></script>
+<script src="lastIndexOf的使用.js"></script>
+<script src="includes的使用.js"></script>
+<script src="find和findIndex的使用.js"></script>
+<script>
+    console.log('indexOf、lastIndexOf和includes都是用的===比较的，只能效验基本类型，不能效验对象类型')
+    const arr = [
+        1,
+        'abc',
+        false,
+        null,
+        1,
+        NaN,
+        ['q', 'w', 'e'],
+        {id: 1, name: '十万个为什么', price: 100},
+        () => Date.now(),
+        undefined,
+        new Date('2022/09/30'),
+        new RegExp('abc', 'ig'),
+        Symbol('sym'),
+        7,
+        6
+    ];
+
+    useIndexOf(arr);
+    useLastIndexOf(arr);
+    useIncludes(arr);
+    useFind(arr);
+
+</script>
+</html>

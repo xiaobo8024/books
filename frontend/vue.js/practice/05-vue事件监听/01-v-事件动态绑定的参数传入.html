@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <button @click="button1">按钮1</button>
+    <button @click="button2()">按钮2</button>
+    <button @click="button3()">按钮3</button>
+    <button @click="button3">按钮4</button>
+    <button @click="button4">按钮5</button>
+    <button @click="button4()">按钮6</button>
+    <button @click="button5">总结按钮</button>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好陌生人',
+        },
+        methods: {
+            button1() {
+                console.log('点击了按钮1(@click="button1"),无参时()可以省略');
+            },
+            button2() {
+                console.log('点击了按钮2(@click="button1()"),无参时()可以省略,也可以加上');
+            },
+            button3(name) {
+                if(typeof name=='undefined'){
+                    console.log('点击了按钮3(@click="button3()"),有参数时，如果使用button3()不省略()，传入参数是undefined类型');
+                    console.log(name);
+                }else {
+                    console.log('点击了按钮4(@click="button3")有参数时，如果使用button3省略(),传入的第一个参数是event对象')
+                    console.log(name)
+                }
+            },
+            button4(name,age) {
+                if(typeof name =='undefined'){
+                    console.log('点击了按钮6,(@click="button4()")有参数时，如果使用button4不省略()，传入参数是undefined类型对象');
+                    console.log('name: '+name);
+                    console.log('age: '+age);
+                }else {
+                    console.log('点击了按钮5,(@click="button4")有参数时，如果使用button4省略()，传入的第一个参数是event对象');
+                    console.log('name: '+name);
+                    console.log('age: '+age);
+                }
+            },
+            button5() {
+                console.log('当绑定事件的函数不带()时,如果有一个或多个参数,()中第一个参数是event对象');
+                console.log('当绑定事件的函数带()时,如果有一个或多个参数,()中参数都是undefined类型对象');
+            },
+        },
+    })
+</script>
+</body>
+</html>

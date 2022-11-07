@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--    <form action="/showUser" method="get" id="select">-->
+<!--        <span>用户名：</span>-->
+<!--        <input type="text"  name="name" placeholder="请输入用户名"/>-->
+<!--        <input type="button"  onclick="submitForm()" value="查询"/>-->
+<!--        <a href="userAdd.html">添加用户</a>-->
+<!--    </form>-->
+
+<!--  如果按下去后不写javascript代码是没有反应的   -->
+    <input type="button" value="查询">
+
+<!--  提交整个表单数据，阻止时要写javascript代码阻止  -->
+    <input type="submit" value="提交">
+
+<!-- 优势: 这个按钮放在 form 中也会点击自动提交，比前两个的**优点**是按钮的内容不光可以有文字，还可以有图片等多媒体内容。（当然，前两个用图片背景也可以做到）。
+     缺点:是不同的浏览器得到的 value 值不同；可能还有其他的浏览器兼容问题。  -->
+    <button>传统按钮</button>
+
+    <!--  注意：在 HTML <form>中使用 button 元素，不同的浏览器会提交不同的值。Internet Explorer 将提交<button><button/>之间的文本，
+而其他浏览器将提交 value 属性的内容。请在 HTML 表单中使用<input>来创建按钮。  -->
+
+<!--其他标签，例如 a, img, span, div，然后用图片把它伪装成一个按钮。-->
+<!--在<button>标签中，加入样式代码：style="background: url(small2.png);width:150px;height:60px"。-->
+    <button style="background: url('../笔记/vue/v-bind与v-model/image/1.png');width: 150px; height: 60px "></button>
+
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+
+<!--<script>-->
+<!--        function submitForm(){-->
+<!--        //获取form表单对象,提交选择项目-->
+<!--        var form = document.getElementById("select");-->
+<!--        form.submit();//form表单提交-->
+<!--    }-->
+<!--</script>-->
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+        },
+        methods: {},
+    })
+</script>
+</html>

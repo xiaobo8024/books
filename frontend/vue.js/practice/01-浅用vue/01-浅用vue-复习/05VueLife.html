@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../../../scriptdata/vue.js"></script>
+<body>
+<div id="app">
+    <h2>总价格: {{account}}</h2>
+    <h2>总点击数: {{accounts}}</h2>
+    <button v-on:click="add">+</button>
+    <button v-on:click="sub">-</button>
+</div>
+</body>
+<script>
+    const obj={
+        account: 0,
+        accounts: 0,
+    }
+    const obj2={
+        add: function (){
+            console.log("执行了+ 一次");
+            this.account++;
+            this.accounts++;
+        },
+        sub:function (){
+            console.log("执行了- 一次");
+            this.account--;
+            this.accounts++;
+        }
+    }
+    const app = new Vue({
+        el: '#app',
+        data: obj,
+        methods: obj2,
+    });
+
+
+
+    // const app = new Vue({
+    //     el: '#app',
+    //     data: {
+    //         message: '你好陌生人',
+    //         account: 0,
+    //         accounts: 0,
+    //     },
+    //     methods: {
+    //
+    //         add: function (){
+    //            console.log("执行了+ 一次");
+    //            this.account++;
+    //            this.accounts++;
+    //         },
+    //
+    //         sub:function (){
+    //             console.log("执行了- 一次");
+    //             this.account--;
+    //             this.accounts++;
+    //         }
+    //     }
+    // });
+
+</script>
+</html>

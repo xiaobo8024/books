@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .active {
+            color: red;
+        }
+        .online{}
+        .use{}
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!--  静态属性-->
+    <h2 class="active">对h2标签的class属性静态赋值</h2>
+    <!--
+    actives是一个对象，actives的值是active绑定到class属性上
+    这样绑定并没有什么用
+      -->
+    <h2 :class="actives">对h2标签的class属性动态绑定</h2>
+
+    <!-- class的属性支持以key-value形式进行建立class对象 -->
+    <h2 :class="{active:isActive,online:isOnline}">对h2标签的class属性进行多对象动态绑定</h2>
+    <button v-on:click='getActive()'>变颜色</button>
+    <!--   使用语法糖 -->
+    <button @click='getActive()'>@click=v-on:click 使用语法糖</button>
+<!--  绑定的属性可以和不绑定的属性一起用  -->
+    <h2 class="use" :class="{active:isActive,online:isOnline}">绑定的属性可以和不绑定的属性一起用</h2>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'aaaa',
+            actives: 'active',
+            isActive: true,
+            isOnline: true,
+        },
+        methods: {
+
+            getActive: function () {
+                this.isActive = !this.isActive;
+            },
+
+            getOnline: function () {
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

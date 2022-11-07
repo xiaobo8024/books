@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../../../scriptdata/vue.js"></script>
+<body>
+<div id="app">
+    <h2>点击次数: {{accounts}}</h2>
+    <h2>数值大小: {{account}}</h2>
+    <button v-on:click="add">+</button>
+    <button v-on:click="sub">-</button>
+</div>
+</body>
+<script>
+   const app= new Vue({
+       el: '#app',
+       data: {
+           message: '你好陌生人',
+           account: 0,
+           accounts:0,
+       },
+       methods: {
+           add: function () {
+               console.log("触发了+操作");
+               this.account++;
+               this.accounts++;
+           },
+           sub: function (){
+               console.log("触发了-操作");
+               this.account--;
+               this.accounts++;
+           }
+       }
+   })
+</script>
+</html>

@@ -1,0 +1,82 @@
+.active-nick{
+    background-color: #00a1e5;
+}
+.pagination-nick{
+    width: 99.99%;
+    height: 99.99%;
+    border: 50px solid green;
+    padding: 30px;
+    margin: auto;
+}
+
+.pagination-nick .main-box-nick{
+    width: 99.99%;
+    height: 910px;
+    /*margin-left: 10px;*/
+    /*margin-right: 10px;*/
+    border: 1px solid red;
+    margin: auto;
+}
+.pagination-nick  .btn-box-con{
+    /*border: 1px solid red;*/
+    width: 800px;
+    height: 40px;
+    /*水平垂直居中*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*margin: auto;*/
+    /*text-align: center;*/
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.pagination-nick  .btn-box-con .num-box-nick{
+    /*border-radius: 5px;*/
+    /*margin-right: 4px;*/
+    /*padding: 2px;*/
+    /*width: 50px;*/
+    /*height: 35px*/
+    border-radius: 5px;
+    margin-right: 4px;
+    /*background: #8AC007;*/
+    padding: 2px;
+    width: 50px;
+    height: 35px
+
+}
+.pagination-nick  .btn-box-con .btn-box-nick {
+    border-radius: 5px;
+    margin-right: 4px;
+    /*background: #8AC007;*/
+    padding: 2px;
+    width: 50px;
+    height: 35px
+}
+.pagination-nick  .btn-box-con .go-btn-nick{
+    /*border-radius: 20px;*/
+    /*margin-right: 0px;*/
+    border-radius: 5px;
+    margin-right: 4px;
+    /*background: #8AC007;*/
+    padding: 2px;
+    width: 50px;
+    height: 35px
+
+}
+
+
+.pagination-nick  .btn-box-con #page-ipt-nick{
+    border-radius: 5px;
+    margin-right: 4px;
+    /*background: #8AC007;*/
+    padding: 2px;
+    width: 35px;
+    height: 25px
+}
+/*.pagination-nick  .btn-box-con .go-btn-nick{*/
+
+/*}*/
+

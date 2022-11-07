@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--  绑定样式对象 ,与class相比,style更加灵活，不用拘束于固定的一类模板 -->
+    <h2 :style="name">{{message}}</h2>
+<!-- style也是以key-value形式的，value是字符串类型，所以也可以只动态绑定value值   -->
+<!--  与style传入一个对象相比较，只传绑定value值修改起来更加简便，但不能扩展要加入其他css属性，一般不需要扩展  -->
+    <h2 :style="{color:colors,font:fonts}">{{message}}</h2>
+
+
+    <div :style="{backgroundColor: red,width: width,height: height}"></div>
+    <div :style="background"></div>
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+            red: 'red',
+            name: {color: 'red',font: 'caption'},
+            colors: 'aqua',
+            fonts: 'caption',
+            width: '100px',
+            height: '100px',
+            background: {
+                backgroundColor: 'aqua',
+                width: '100%',
+                height: '200px',
+            }
+        },
+        methods: {
+
+        },
+    })
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .active{
+      color: coral;
+    }
+    .online{}
+  </style>
+</head>
+<body>
+<div id="app">
+  <h2 :class="{active:isActive,online:isOnline}">vue属性动态绑定class对象</h2>
+  <h2 :class="getClasses()">vue属性动态绑定抽取class对象</h2>
+<!-- butClick的()被省略了，因为class中可以传对象也可以传函数，()不能省略 -->
+  <button @click="butClick">点击我</button>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  const app=new Vue({
+    el: '#app',
+    data: {
+     message: '你好陌生人',
+      isActive: true,
+      isOnline: true,
+    },
+    methods:{
+      butClick:function (){
+        this.isActive=!this.isActive;
+      },
+      getClasses:function (){
+        return {active:this.isActive,online:this.isOnline};
+      },
+    }
+  })
+</script>
+</body>
+</html>

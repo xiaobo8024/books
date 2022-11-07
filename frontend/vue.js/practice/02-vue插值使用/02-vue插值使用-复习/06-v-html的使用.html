@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <!-- 使用v-html属性，可以将字符串解析成html格式的语句 -->
+   <h2>{{url}}</h2>
+    <h2 v-html="url"></h2>
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script></script>
+<script>
+    const app=new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+            url: '<a href="https://www.baidu.com/">百度一下</a>'
+        },
+        methods: {
+
+        },
+    })
+</script>
+</html>

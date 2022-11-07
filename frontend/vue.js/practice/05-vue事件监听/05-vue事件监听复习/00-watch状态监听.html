@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <input type="text" v-model="cityName">
+<!--  v-model中的值是vue data中的model对象。  -->
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            cityName: '上海',
+        },
+        methods: {
+
+        },
+        watch: {
+            //需要监听的data中的model对象,进行get ，set?
+            cityName (newName,oldName){
+                console.log("newName: "+newName+'       '+'oldName: '+oldName);
+            }
+            // cityName: function (newName,oldName){
+            //     console.log("newName: "+newName+'       '+'oldName: '+oldName);
+            // }
+        }
+    })
+</script>
+</html>

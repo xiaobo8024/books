@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <h2>总价格: {{price*num}}</h2>
+    <h2>单价: {{price}}</h2>
+    <h2>数量: {{num}}</h2>
+    <button @click="num==0?0:num--">减少数量</button>    <button @click="num++">增加数量</button>
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            totalPrice: 0,
+            price: 20,
+            num: 0,
+        },
+        methods: {},
+    })
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .box{
+      width: 300px;
+      border: 25px solid red;
+      /*height: 300px;*/
+      padding: 30px;
+      /*margin: 25px;*/
+    }
+  </style>
+</head>
+<body>
+<div class="box" id="demo">
+    <button type="button"  onclick="getClick()" id="but">点击</button>
+</div>
+
+<div class="box">
+    <p>
+        JavaScript能够直接写入HTML 输出流中
+    </p>
+</div>
+
+</body>
+<script>
+    document.write("<h1>这是一个标题</h1>")
+
+
+   function getClick(){
+       document.getElementById("demo").innerHTML="<h1>这是一个标题</h1>";
+   }
+
+    var aaa = document.getElementById("demo");
+    console.log(aaa);
+    var children = aaa.children;
+    console.log(children)
+    var elementById = document.getElementById("but");
+    console.log(elementById)
+
+</script>
+</html>

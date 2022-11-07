@@ -1,0 +1,29 @@
+v-bind 和v-model的区别:
+
+v-bind是一个单向数据绑定，映射关系：Model->View，我们不需要进行额外的DOM操作，只需要进行Model的操作就可以实现视图的联动更新。
+
+v-model是一个双向数据绑定，映射关系：View接受的数据,传给model,model的数据再传给view。把Model绑定到View的同时也将View绑定到Model上，
+这样就既可以通过更新Model来实现View的自动更新，也可以通过更新View来实现Model数据的更新。所以，当我们用JavaScript代码更新Model时，View就会自动更新，
+反之，如果用户更新了View，Model的数据也自动被更新了。
+
+v-bind的使用:
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+
+    <!--  静态属性-->
+    <h2 class="active">对h2标签的class属性静态赋值</h2>
+    <!--
+    actives是一个对象，actives的值是active绑定到class属性上，更改actives的值可以更改class对象
+    但并不经常这样绑定
+      -->
+    <h2 :class="actives">对h2标签的class属性动态绑定</h2>
+
+    <!-- class的属性支持以key-value形式进行建立class对象， value 的值是boolean 类型 -->
+    <h2 :class="{active:isActive,online:isOnline}">对h2标签的class属性进行多对象动态绑定</h2>
+
+
+    <!-- style的属性支持以key-value形式进行建立class对象， value 的值是字符串类型 -->
+    <h2 :style="{color:aaa,font:bbb}">对h2标签的class属性进行多对象动态绑定</h2>

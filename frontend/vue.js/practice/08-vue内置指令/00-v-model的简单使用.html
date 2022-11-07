@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 200px;
+            border: black solid 1px;
+        }
+    </style>
+</head>
+<body>
+<div id='app'>
+    <!--  v-model是一个类似语法糖，但是不是语法糖要去看源码  -->
+    <input type="text" v-model="message">
+
+<!-- v-model 等于v-on 和v-bind 遵循数据向下，事件向上  -->
+
+</div>
+<div id="app1">
+    <div class="box">
+        <span>v-model的使用，语法糖</span>
+        <br>
+
+        <select v-model="bookName">
+            <option v-for="item in books" >{{item.bookName}}</option>
+        </select>
+        <br>
+        <span>选择到的书:{{bookName}}</span>
+    </div>
+
+    <div class="box">
+        <span>v-model的使用，非语法糖</span>
+        <br>
+
+        <select :value="bookName1" @input="bookName1=$event.target.value">
+            <option v-for="item in book1s" >请选择:{{item.bookName}}</option>
+        </select>
+        <br>
+        <span>选择到的书:{{bookName1}}</span>
+    </div>
+
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    //前端控制台打印app.message='你好啊，陌生人，输入框里的内容跟着改变'
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+        },
+        methods: {},
+    });
+ const app1=new Vue({
+     el: '#app1',
+     data: {
+         books: [
+             {id:1,bookName:'海底两万里',price:100},
+             {id:2,bookName:'十万个为什么',price:110},
+             {id:3,bookName:'百科全书',price:10},
+             {id:4,bookName:'大话西游',price:20},
+         ],
+         book1s: [
+             {id:1,bookName:'海底两万里',price:100},
+             {id:2,bookName:'十万个为什么',price:110},
+             {id:3,bookName:'百科全书',price:10},
+             {id:4,bookName:'大话西游',price:20},
+         ],
+         bookName: '',
+         bookName1: '',
+     },
+
+ });
+</script>
+</html>

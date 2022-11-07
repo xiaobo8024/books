@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    [v-loack] {
+        display: none;
+    }
+</style>
+<body>
+<div id="app">
+    <h2>总价格:{{totalPrice}}</h2>
+    <h2>{{fullName}}</h2>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好陌生人',
+            books: [
+                {id: 1, name: "百年孤独", price: 100},
+                {id: 2, name: "去看你", price: 50},
+                {id: 3, name: "白夜行", price: 80},
+                {id: 4, name: "简爱", price: 90},
+                {id: 5, name: "格林童话", price: 70},
+            ],
+            firstName: '献博',
+            lastName: '田',
+        },
+        //computed中存储的是对象。
+        //使用totalPrice:function属于语法糖
+        // computed: {
+        //   totalPrice: function (){
+        //       let result=0;
+        //       for(let book of this.books){
+        //         result+=book.price;
+        //       }
+        //       return result;
+        //   }
+        // },
+
+        computed: {
+            totalPrice: {
+                //totalPrice对象中的get方法
+                get: function () {
+                    let result = 0;
+                    //es5语法
+                    // for (let i = 0; i < this.books.length; i++) {
+                    //   result+=this.books[i].price;
+                    // }
+                    //es6语法
+                    // for (let index in this.books){
+                    //   result+=this.books[index].price;
+                    // }
+                    //es6 遍历取对象语法
+                    for (let book of this.books) {
+                        result += book.price;
+                    }
+                    return result;
+                },
+                //totalPrice对象中的set方法
+
+            },
+          fullName: {
+            get: function () {
+              return this.firstName + ' ' + this.lastName;
+            },
+            set: function (newName) {
+              console.log(newName+"------------")
+              let name=newName.split(' ');
+              this.firstName=name[0];
+              this.lastName=name[1];
+            }
+          }
+        }
+
+    })
+</script>
+</body>
+</html>

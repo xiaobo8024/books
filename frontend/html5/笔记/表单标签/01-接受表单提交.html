@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+
+    <form  name="myForm">
+        <label for="username">
+            <span>账号:</span>
+            <input type="text" name="username" id="username">
+        </label><br/>
+        <label for="password">
+            <span>密码:</span>
+            <input id="password" type="password" name="password">
+        </label><br/>
+        <button id="demo" type="submit">登录</button>
+    </form>
+
+</div>
+</body>
+
+<script>
+document.getElementById("demo").onclick=function () {
+    // let inputValue,password,username;
+    var value = document.forms["myForm"]["username"].value;
+    console.log(value)
+}
+</script>
+</html>

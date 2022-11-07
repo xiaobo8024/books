@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    let err='';
+    let a=0;
+    let b=1;
+    try {
+      if(b===1) throw "b不能等于1";
+    }catch (err){
+        console.log("错误:"+err);
+    }finally {
+        console.log("--------");
+    }
+    // function getCatch() {
+    //     let a=0;
+    //     let b=1;
+    //     try{
+    //         if(a===0) throw "不能为0";
+    //     }catch (e) {
+    //         console.log("错误信息:"+e);
+    //     }finally {
+    //         console.log("-----");
+    //     }
+    //
+    // }
+    // getCatch();
+</script>
+</html>

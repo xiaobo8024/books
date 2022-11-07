@@ -1,0 +1,53 @@
+属性:修饰标签内容的关键字,写在标签的<>里
+比如按钮 的大小,颜色，需要标签的style属性进行修饰.或class一类style标签中相同属性的模板
+style 在标签内做为标签属性 也可以单独做为一个标签style样式标签(需要在标签内容中定义class对象，以.class的形式定义 例如:)
+    <style>
+        .active {
+            color: aqua;
+            font: caption;
+        }
+        .aaa {
+            color: brown;
+            font: caption;
+        }
+    </style>
+<button class="aaa">按钮</button>
+
+属性绑定:将标签中的属性与Vue中的data{} 的对象进行绑定。
+class与style支持key-value对象属性绑定，class动态绑定的key-value的value类型是Boolean类型，style的类型是字符串类型.
+除对象属性绑定外，还支持有数组属性绑定。
+class:
+<!-- 普通属性绑定   -->
+    <a :href="urls">{{title}}</a>
+<!--  class对象绑定  -->
+<!--  这样绑定可以更换style对象的值对class模板进行更换  -->
+<!--  一般不这样使用，因为更换一类属性不灵活  -->
+    <h2 :class="style">{{message}}</h2>
+    <button @click="toClick">点击我可以更换style对象的值对class模板进行更换</button>
+
+<!--  使用key-value形式绑定class对象 key是class对象，value是与Vue动态绑定的Boolean类型对象 -->
+    <h2 :class="{myStyle:isActive}">{{message}}</h2>
+    <button @click="clicks">点击我启用或关闭class对象</button>
+
+<!-- 动态抽取class对象，对class对象进行简化   -->
+<!-- 使用v-bind后,必与Vue中的参数绑定  -->
+    <h2 :class="myStyle">{{message}}</h2>
+     computed: {
+         myStyle(){
+             return {myStyle:this.isActive};
+         }
+     }
+
+style:
+<!--  可以直接传入样式对象 ,与class相比,style更加灵活，不用拘束于固定的一类模板 -->
+    <h2 :style="name">{{message}}</h2>
+<!-- style也是以key-value形式的，value是字符串类型，所以也可以只动态绑定value值   -->
+<!--  与style传入一个对象相比较，只传绑定value值修改起来更加简便，但不能扩展要加入其他css属性，一般不需要扩展  -->
+    <h2 :style="{color:colors,font:fonts}">{{message}}</h2>
+     data: {
+         message: '你好啊陌生人',
+         red: 'red',
+         name: {color: 'red',font: 'caption'},
+         colors: 'aqua',
+         fonts: 'caption',
+     },

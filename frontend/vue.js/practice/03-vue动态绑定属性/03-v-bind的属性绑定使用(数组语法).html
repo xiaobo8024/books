@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: coral;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<!--  只有在动态绑定的时候才可以用数组语法，但是数组语法绑定属性时，改变对象值很难，一般不用  -->
+    <h2 :class="[active]">vue属性绑定数组语法</h2>
+<!--  vue属性绑定数组语法,抽取数组  控制台可查看-->
+    <h2 class="wusheng" :class="getClasses()">vue属性绑定数组语法,抽取数组</h2>
+
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+  const app=new Vue({
+    el: '#app',
+    data: {
+     message:'你好陌生人',
+        active: 'active',
+        line: 'line',
+        title: 'title',
+    },
+
+      methods: {
+        getClasses : function (){
+            return [this.active,this.line,this.title];
+        }
+      }
+  })
+</script>
+</body>
+</html>

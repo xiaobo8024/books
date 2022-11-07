@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1.title{
+            color: #04b9ae;
+        }
+        .box{
+            width: 600px;
+            height: 300px;
+            border: #5e38cc solid 1px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id='app' class="box">
+<!--  指定h1标签的类模板是title 只能在h1标签中生效  -->
+    <h1 class="title">{{message}}</h1>
+    <h2 class="title">{{message}}</h2>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊陌生人',
+        },
+        methods: {},
+    })
+</script>
+</html>

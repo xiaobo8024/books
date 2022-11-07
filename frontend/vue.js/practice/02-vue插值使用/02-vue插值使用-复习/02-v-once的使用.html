@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../../../scriptdata/vue.js"></script></script>
+<body>
+<div id="app">
+    <h2 v-once>{{name}}的价格是{{price}}</h2>
+    <h2 >{{name}}</h2>
+</div>
+</body>
+<script>
+    const obj={
+        name: 'gg陈',
+        price: 100,
+    }
+    const template={
+        el: '#app',
+        data: obj,
+    }
+ const app=new Vue(template)
+</script>
+</html>

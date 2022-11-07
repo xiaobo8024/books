@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../jQuery3.6.1.js"></script>
+<body>
+<div id="myDiv">
+  <button type="button">搜索</button>
+</div>
+</body>
+<script>
+  $(function () {
+    $("button").click(function (){
+      // let xmlHttp;
+      // if(window.XMLHttpRequest){
+      //  xmlHttp=new XMLHttpRequest();
+      // }else {
+      //   xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+      // }
+      let xmlHttp=new XMLHttpRequest();
+
+      xmlHttp.onreadystatechange=function() {
+        if (xmlHttp.readyState===4 && xmlHttp.status===200) {
+          document.getElementById("myDiv").innerHTML=xmlHttp.responseText;
+        }
+      }
+
+      xmlHttp.open("get","../ajax_info.txt",true);
+      // xmlHttp.open("get","http://localhost:9527/hello/wold",true);
+      console.log("发送请求")
+      xmlHttp.send();
+    })
+  })
+</script>
+</html>

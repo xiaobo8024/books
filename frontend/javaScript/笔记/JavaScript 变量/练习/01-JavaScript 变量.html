@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    var var1=1; //不可配置全局属性，可配置全局变量
+    var2=2;
+    console.log(this.var1);
+    console.log(window.var1);
+    console.log(window.var2);
+
+    delete  var1; //false 无法删除
+    console.log(var1);
+
+    delete var2;
+    console.log(delete var2);
+    console.log(var2);//已经删除 报错变量未定义
+</script>
+</html>

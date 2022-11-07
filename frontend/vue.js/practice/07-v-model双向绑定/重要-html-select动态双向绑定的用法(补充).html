@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+<!--  v-model="book" 等价于: :value="book" @input="book=$event.target.value" -->
+<!--  v-model遵循数据向下，事件向上的规则 当下拉单选中的值发生改变时book=$event.target.value的值，触发事件时选择的值 -->
+<!--    <select v-model="book">-->
+    <select :value="book" @input="book=$event.target.value" id="book">
+        <option  v-for="item in books" :value="item.name">{{item.name}}</option>
+    </select>
+    <p>获取到的书: {{book}}</p>
+    <br/>
+    <p>拿到当前选中的price的值:{{price}}</p>
+
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            book:'',
+            books: [
+                {id: 1, name: "百年孤独", price: 100},
+                {id: 2, name: "去看你", price: 50},
+                {id: 3, name: "白夜行", price: 80},
+                {id: 4, name: "简爱", price: 90},
+                {id: 5, name: "格林童话", price: 70},
+            ],
+        },
+        methods: {
+        },
+        computed: {
+            price(){
+               let book=this.book;
+                for (let item of this.books) {
+                    //获取对象所有key的方法，需要使用Object.keys(obj)方法,Object.keys(obj)方返回一个数组，这个数组包含obj对象中的所有key。
+                    //其中obj就是你写的对象.
+                   // console.log(Object.keys(item));
+                    //获取对象所有value的方法，需要使用Object.value(obj)方法,Object.value(obj)方返回一个数组，
+                    // 这个数组包含obj对象中的所有value。
+                    let obj=Object.values(item)
+                    console.log(Object.values(item));
+                   if(obj.includes(book)){
+                       console.log(item.price);
+                       return item.price;
+                   }
+                }
+            }
+        }
+    })
+</script>
+</html>

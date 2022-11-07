@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='app'>
+    <h2>{{message | toUpCase | toDown}}</h2>
+</div>
+</body>
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello word',
+        },
+
+        methods: {
+
+        },
+
+        watch: {
+
+        },
+
+        computed: {
+
+        },
+        filters: {
+            toUpCase(value){
+                console.log(value+'-------')
+                return value?value.toUpperCase():'';
+            },
+            toDown(value){
+                console.log(value);
+                return value?value.toLowerCase():'';
+            }
+        }
+    })
+</script>
+</html>

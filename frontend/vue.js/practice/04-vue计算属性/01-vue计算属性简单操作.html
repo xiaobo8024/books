@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  直接拼接太长了  -->
+<h2>{{firstName+' '+lastName}}</h2>
+<h2>{{firstName}} {{lastName}}</h2>
+<!--  用调用函数进行简化  -->
+<h2>{{getFullName()}}</h2>
+<!-- vue自带有计算属性key,计算后以属性的形式展示   -->
+    <h2>{{fullName}}</h2>
+</div>
+
+<script src="../../../scriptdata/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            firstName: '献博',
+            lastName: '田',
+        },
+        methods: {
+            getFullName: function (){
+                return this.firstName+' '+this.lastName;
+            }
+        },
+        computed: {
+          fullName: function (){
+              return this.firstName+' '+this.lastName;
+          }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-loack]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h2 v-loack="style">{{message}}</h2>
+    <h2>{{message}}</h2>
+</div>
+</body>
+<script src="../../../../scriptdata/vue.js"></script></script>
+<script>
+    let name=function (){
+        const app= new Vue({
+            el: '#app',
+            data: {
+                message: "我是消息呀"
+            }
+        });
+    }
+    // setTimeout(function (){
+    //     const app=new Vue({
+    //         el: '#app',
+    //         data: {
+    //             message:'我是消息哇',
+    //         },
+    //     })
+    // },1000);
+    setTimeout(name,2000)
+
+</script>
+</html>
