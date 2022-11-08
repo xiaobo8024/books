@@ -30,7 +30,7 @@ git log --author=mengfanxiao --since=2019-01-01 --until=2021-02-01 --format='%aN
 git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5
 ```
 
-![img](./images/v2-dbdd12a0a0dc31e483b78845cafd7c88_720w.jpg)
+![img](images/v2-dbdd12a0a0dc31e483b78845cafd7c88_720w.jpg)
 
 ##### 5、贡献值统计
 
@@ -56,7 +56,7 @@ git log --stat|perl -ne 'END { print $c } $c += $1 if /(\d+) insertions/'
 
 
 
-![img](./images/v2-e3486c4cce7dafc3d6c8e074235dd456_720w.jpg)
+![img](images/v2-e3486c4cce7dafc3d6c8e074235dd456_720w.jpg)
 
 
 
@@ -64,7 +64,7 @@ git log --stat|perl -ne 'END { print $c } $c += $1 if /(\d+) insertions/'
 
 
 
-![img](./images/v2-3452df044723b5d2553c171b5fdbb710_720w.jpg)
+![img](images/v2-3452df044723b5d2553c171b5fdbb710_720w.jpg)
 
 
 
@@ -72,7 +72,7 @@ git log --stat|perl -ne 'END { print $c } $c += $1 if /(\d+) insertions/'
 
 
 
-![img](./images/v2-79fad617f4904b000638a9cfcaa0f288_720w.jpg)
+![img](images/v2-79fad617f4904b000638a9cfcaa0f288_720w.jpg)
 
 
 
@@ -80,7 +80,7 @@ git log --stat|perl -ne 'END { print $c } $c += $1 if /(\d+) insertions/'
 
 
 
-![img](./images/v2-0c093cf4023f9fa28f40fa6de9b71e8c_720w.jpg)
+![img](images/v2-0c093cf4023f9fa28f40fa6de9b71e8c_720w.jpg)
 
 
 
@@ -88,7 +88,7 @@ git log --stat|perl -ne 'END { print $c } $c += $1 if /(\d+) insertions/'
 
 
 
-![img](./images/v2-3bbf103357ee371002c6f41313af1d99_720w.jpg)
+![img](images/v2-3bbf103357ee371002c6f41313af1d99_720w.jpg)
 
 
 
@@ -98,7 +98,7 @@ git log --stat|perl -ne 'END { print $c } $c += $1 if /(\d+) insertions/'
 
 
 
-![img](./images/v2-9ea6be7e92c553b3a6f5430da6170ac7_720w.jpg)
+![img](images/v2-9ea6be7e92c553b3a6f5430da6170ac7_720w.jpg)
 
 
 
@@ -106,7 +106,7 @@ git log --stat|perl -ne 'END { print $c } $c += $1 if /(\d+) insertions/'
 
 
 
-![img](./images/v2-caa216648908fbb20cf2657cfbeb50b8_720w.jpg)
+![img](images/v2-caa216648908fbb20cf2657cfbeb50b8_720w.jpg)
 
 
 
@@ -123,25 +123,25 @@ brew install gnuplot
 
 
 
-![img](./images/v2-b8c64b6ed71143307292d6c809802236_720w.jpg)
+![img](images/v2-b8c64b6ed71143307292d6c809802236_720w.jpg)
 
 
 
 
 
-![img](./images/v2-00f7cddd7d53c72c82096a040c549942_720w.jpg)
+![img](images/v2-00f7cddd7d53c72c82096a040c549942_720w.jpg)
 
 
 
 
 
-![img](./images/v2-5db744a40e259ba85bdb5b147f4d91c4_720w.jpg)
+![img](images/v2-5db744a40e259ba85bdb5b147f4d91c4_720w.jpg)
 
 
 
 
 
-![img](./images/v2-85e4da6dd2c8aaaa84804c44ac7049e8_720w.jpg)
+![img](images/v2-85e4da6dd2c8aaaa84804c44ac7049e8_720w.jpg)
 
 
 
@@ -159,7 +159,7 @@ brew install gnuplot
 
 
 
-![img](./images/v2-e2cbf734b943cfd651bd0d2fe0d47e4e_720w.jpg)
+![img](images/v2-e2cbf734b943cfd651bd0d2fe0d47e4e_720w.jpg)
 
 
 
@@ -177,4 +177,4 @@ cloc -by-file acpi
 
 #### 4、帮助文档
 
-![img](./images/v2-194eb4bad5438beee92d70f7bf58ab8c_720w.jpg)
+![img](images/v2-194eb4bad5438beee92d70f7bf58ab8c_720w.jpg)

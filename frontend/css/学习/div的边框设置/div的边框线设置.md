@@ -14,23 +14,23 @@
 
   新建一个【HTML页面】。
 
-  ![img](./images/3.png)
+  ![img](images/3.png)
 
 - 2*/*4
 
   在HTML的中【<body>】写上【<div>】标签，打开浏览器会有对应的效果图。
 
-  ![img](./images/4.png)
+  ![img](images/4.png)
 
 - 3*/*4
 
   两种增加样式方法:
   统一设置边框样式。
 
-  ![img](./images/5.png)
+  ![img](images/5.png)
 
 - 4*/*4
 
   分别设置边框样式，规则还是一样的。
 
-  ![img](./images/6.png)
+  ![img](images/6.png)

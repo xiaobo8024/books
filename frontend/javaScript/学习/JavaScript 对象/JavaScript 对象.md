@@ -10,7 +10,7 @@ JavaScript 对象是拥有属性和方法的数据。
 
 | 对象                                | 属性                                                         | 方法                                              |
 | :---------------------------------- | :----------------------------------------------------------- | :------------------------------------------------ |
-| ![img](./image/objectExplained.gif) | car.name = Fiat  car.model = 500  car.weight = 850kg  car.color = white | car.start()  car.drive()  car.brake()  car.stop() |
+| ![img](image/objectExplained.gif) | car.name = Fiat  car.model = 500  car.weight = 850kg  car.color = white | car.start()  car.drive()  car.brake()  car.stop() |
 
 所有汽车都有这些属性，但是每款车的属性都不尽相同。
 
