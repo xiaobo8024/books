@@ -6,7 +6,7 @@ Github 的工作流：
 
 
 
-![img](./images/v2-aabb20757ee5f154d8f682d0438e6f35_720w.webp)
+![v2-aabb20757ee5f154d8f682d0438e6f35_720w](.\images\v2-aabb20757ee5f154d8f682d0438e6f35_720w.jpg)
 
 
 
@@ -24,9 +24,7 @@ MR 的全称是 Merge Request，相信玩过 Gitlab 的同学都知道这个。
 
 插播一下，Github这么好用了为什么还有人玩 Gitlab，这就要几年前说起了。在微软没有收购 Github 之前，Github 上面所有的项目必须是公开的，也就是说自己很渣的代码也必须要公开，不能藏着噎着。但是在一些小的公司或者创业团队，代码这种核心资产是不希望被公开，他们迫切需要私密仓这种需求，所以很多人都选择了 Gitlab。当然后面 Github 也放开了私有仓库，这是后话了。
 
-
-
-![img](./images/v2-7001c86306140ff2f842ef3a22205a21_720w.webp)
+![v2-7001c86306140ff2f842ef3a22205a21_720w](.\images\v2-7001c86306140ff2f842ef3a22205a21_720w.jpg)
 
 
 
