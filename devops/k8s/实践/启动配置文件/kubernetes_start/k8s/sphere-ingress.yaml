@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubesphere
+spec:
+  rules:
+  - host: kubesphere.dev.com
+    http:
+       paths: 
+          - backend: 
+              serviceName: ks-console
+              servicePort: 80        

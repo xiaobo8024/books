@@ -1,0 +1,27 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.define "node201" do |node1|
+    node1.vm.box = "base"
+    node1.vm.hostname = "node201"
+    node1.vm.network "public_network", ip: "192.168.31.201"
+  end
+
+  # config.vm.define "node202" do |node2|
+  #   node2.vm.box = "base"
+  #   node2.vm.hostname = "node202"
+  #   node2.vm.network "public_network", ip: "192.168.31.202"
+  # end
+
+  # config.vm.define "node203" do |node3|
+  #   node3.vm.box = "base"
+  #   node3.vm.hostname = "node203"
+  #   node3.vm.network "public_network", ip: "192.168.31.203"
+  # end
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.memory = "4096"
+    vb.cpus = 4
+  end
+
+end
